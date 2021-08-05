@@ -51,15 +51,15 @@
       if (typeof web3 !== 'undefined') {
         web3 = new Web3(web3.currentProvider);
       } else {
-        web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+        web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
       }
 
       // Set Account
       web3.eth.defaultAccount = web3.eth.accounts[0];
 
       // Set Contract Abi
-      var contractAbi = []; // Add Your Contract ABI here!!!
-
+      var contractAbi = [];
+      
       // Set Contract Address
       var contractAddress = ''; // Add Your Contract address here!!!
 
@@ -67,7 +67,7 @@
       var contract = web3.eth.contract(contractAbi).at(contractAddress);
 
       // Display Candidate Name
-      contract.candidateName(function(err, candidateName) {
+      contract.candidateName.call(function(err, candidateName) {
         $('#candidateName').html(candidateName);
       });
 
