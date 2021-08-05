@@ -80,7 +80,7 @@ First, lets put some standard code in place to allow you to connect to the block
 if (typeof web3 !== 'undefined') {
     web3 = new Web3(web3.currentProvider);
 } else {
-    web3 = new Web3(new Web3.providers. HttpProvider('http://localhost:7545'));
+    web3 = new Web3(new Web3.providers. HttpProvider('http://localhost:8545'));
 }
 ```
 
@@ -120,7 +120,7 @@ First thing we want to do is display the candidate name. If we open up our HTML 
 
 ```javascript
 // Display Candidate Name
-contract.candidateName(function(err, candidateName) {
+contract.candidateName.call(function(err, candidateName) {
     $('#candidateName').html(candidateName);
 });
 ```
