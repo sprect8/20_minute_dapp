@@ -23,7 +23,7 @@ Install Metamask and Ganache-cli onto your local machine before continuing onto 
 Before we deep dive into the main part of this tutorial, lets look at the project structure. These are the basic files that we will require before we can start developing our dapp:
 - the bootstrap library is a set of visual components that will make our user interface a bit more aesthetically pleasing.  
 - the web3 library is used by our dapp to communicate with the blockchain. It will provide us with a convenient way to talk to the smart contract.
-- the index.html file contains our front-end business logic. It will use the bootstrap and web3 libraries to connect and interact with the smart contract.
+- the index.base.html file contains our front-end business logic. It will use the bootstrap and web3 libraries to connect and interact with the smart contract.
 
 ## Remix and Solidity
 Lets begin by copying the smart contract and pasting it into our [remix IDE](https://remix.ethereum.org). The smart contract can be found in contracts/Election.sol. 
@@ -70,8 +70,8 @@ Then test out the functions on the deployed smart contract. Expand the deployed 
 <img src="images/remix-test-contract.png" style="height:300px"/>
 
 ## Creating the Dapp
-Now that we have our smart contract deployed, we can connect our dapp to the blockchain. Open up the index.html file and scroll to the script tags. 
-In this sample dapp we will create a place to hold the candidate name and a form to update the candidate name. In a real dapp you will typically use a framework like react/angular and have a lot more files, but for this example we can put all our logic in the index.html file.
+Now that we have our smart contract deployed, we can connect our dapp to the blockchain. Open up the index.base.html file and scroll to the script tags. 
+In this sample dapp we will create a place to hold the candidate name and a form to update the candidate name. In a real dapp you will typically use a framework like react/angular and have a lot more files, but for this example we can put all our logic in the index.base.html file.
 
 First, lets put some standard code in place to allow you to connect to the blockchain. This boiler plate code will use the injected web3 provider from the environment, and if that doesn’t exist will default to localhost 8545. 
 
@@ -129,7 +129,7 @@ Web3 makes it easy to call our functions once we have configured the necessary p
 
 If we go back to our html file and press refresh we should see the candidate name appear. Great! Now lets write some code to update the candidate name. When a user enters the candidate name and clicks the Add Candidate button we should take the new name entered and update the smart contract with it.  
 
-Lets go back to the index.html file and add the code to do just that.
+Lets go back to the index.base.html file and add the code to do just that.
 First, we will add a listener to the form object so that when the user clicks the Add Candidate button we pick up the ‘submit’ event. Next we call the prevent default function on the event object passed to our function so our form doesn’t get refreshed when the button is clicked. Finally we grab the new candidate name by getting the only input text field on the screen and calling the setCandidate function on the smart contract. 
 ```javascript
 // Change the Candidate Name
