@@ -3,7 +3,8 @@
 This tutorial will teach you how to build a basic, full-stack Dapp that will connect to a smart contract deployed on a local blockchain instance. 
 The goal of this tutorial is to get you familiar with the tools that make up a full-stack Dapp; which includes the blockchain and smart contracts, the deployment tools, and the libraries used to interact with the blockchain.
 
-Visit 
+See index.completed.html in the repository for the completed example.  
+See index.html for the starting file that this tutorial uses as a base to build the Dapp.
 
 ## Components of the Tutorial
 
